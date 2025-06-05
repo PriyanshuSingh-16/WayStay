@@ -38,9 +38,7 @@ async function main() {
 
 
 
-
-
-
+const Listing=require("./models/listing.js");
 
 
 
@@ -54,6 +52,19 @@ app.get("/",(req,res)=>
     res.send("Hello ");
 });
 
+app.get("/testListing",async (req,res)=>
+{
+    let sampleListing=new Listing({
+        title:"My new beach",
+        description:"By the beach",
+        price:1200,
+        location:"Calcanguie,Goa",
+        country:"India"
+    });
+    await sampleListing.save();
+    console.log("Saved");
+    res.send(sampleListing);
+});
 
 
 
