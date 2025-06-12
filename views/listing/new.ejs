@@ -1,0 +1,49 @@
+<% layout('boilerplate') %>
+<% block('styles') 
+{%>
+    <link rel="stylesheet" href="/css/new.css">
+<%}%>
+<main class="form-container">
+    <h1 class="form-title">Add a New Location</h1>
+    <form method="POST" action="/listing/new" class="listing-form needs-validation" novalidate>
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" id="title" name="Listing[title]" placeholder="Enter listing title" required/>
+            <div class="invalid-feedback">
+                *required
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label for="description">Description</label>
+            <textarea id="description" name="Listing[description]" placeholder="Write a short description" rows="4" required></textarea>
+            <div class="invalid-feedback">
+                *required
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="price">Price (&#8377;/Night)</label>
+            <input type="text" id="price" name="Listing[price]" placeholder="e.g., 120" required />
+        </div>
+
+        <div class="form-group">
+            <label for="location">City</label>
+            <input type="text" id="location" name="Listing[location]" placeholder="e.g., New York" required />
+            <div class="invalid-feedback">
+                *required
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="country">Country</label>
+            <input type="text" id="country" name="Listing[country]" placeholder="e.g., USA" required />
+            <div class="invalid-feedback">
+                *required
+            </div>
+        </div>
+
+        <button type="submit" class="submit-btn">Add Listing</button>
+    </form>
+</main>
+<script src="/js/form.js"></script>

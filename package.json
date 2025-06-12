@@ -1,18 +1,19 @@
 {
-  "name": "waystay",
+  "name": "major-mern-project-1",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "Priyanshu Singh",
+  "author": "Akanksha",
   "license": "ISC",
-  "description": "",
+  "description": "My first major project, trying to create something like Airbnb",
   "dependencies": {
     "ejs": "^3.1.10",
     "ejs-mate": "^4.0.0",
     "express": "^5.1.0",
+    "joi": "^17.13.3",
     "method-override": "^3.0.0",
     "mongoose": "^8.15.1"
   }

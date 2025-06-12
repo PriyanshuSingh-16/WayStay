@@ -1,0 +1,16 @@
+<% layout('boilerplate') %>
+<% block('styles') 
+{%>
+    <link rel="stylesheet" href="/css/error.css">
+<%}%>
+<div class="error-container">
+    <div class="error-card">
+        <div class="error-icon">
+            <i class="fas fa-triangle-exclamation"></i>
+        </div>
+        <h1 class="error-title">An Unexpected Error Occurred</h1>
+        <p class="error-message">
+            <%= message || "We’re sorry, but something went wrong on our end. Please try again later." %>
+        </p>
+    </div>
+</div>

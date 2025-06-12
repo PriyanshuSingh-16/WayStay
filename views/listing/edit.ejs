@@ -1,0 +1,53 @@
+<% layout('boilerplate') %>
+<% block('styles') 
+{%>
+    <link rel="stylesheet" href="/css/edit.css">
+<%}%>
+  <main class="form-container">
+    <h1 class="form-title">Edit Listing</h1>
+
+    <form method="POST" action="/listing/<%= chat._id %>/edit?_method=PATCH" class="listing-form needs-validation" novalidate>
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input type="text" id="title" name="Listing[title]" value="<%= chat.title %>" required/>
+        <div class="invalid-feedback">
+          *required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea id="description" name="Listing[description]" rows="4" required><%= chat.description %></textarea>
+        <div class="invalid-feedback">
+          *required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="price">Price (&#8377;/Night)</label>
+        <input type="text" id="price" name="Listing[price]" value="<%= chat.price %>" required/>
+        <div class="invalid-feedback">
+          *required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="location">City</label>
+        <input type="text" id="location" name="Listing[location]" value="<%= chat.location %>" required/>
+        <div class="invalid-feedback">
+          *required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="country">Country</label>
+        <input type="text" id="country" name="Listing[country]" value="<%= chat.country %>" required/>
+        <div class="invalid-feedback">
+          *required
+        </div>
+      </div>
+
+      <button type="submit" class="submit-btn">Update Listing</button>
+    </form>
+  </main>
+<script src="/js/form.js"></script>
