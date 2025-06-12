@@ -6,9 +6,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "Akanksha",
+  "author": "Priyanshu",
   "license": "ISC",
-  "description": "My first major project, trying to create something like Airbnb",
+  "description": "AirBnb Clone",
   "dependencies": {
     "ejs": "^3.1.10",
     "ejs-mate": "^4.0.0",

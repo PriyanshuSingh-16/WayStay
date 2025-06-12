@@ -3,7 +3,7 @@ const app=express();
 const path=require("path");
 const port=8080;
 const mongoose=require('mongoose');
-const database="mongodb://127.0.0.1:27017/Windbnb"
+const database="mongodb://127.0.0.1:27017/WayStay"
 const {Listing, listSchema}=require("./models/listing.js");
 const Review=require("./models/review.js");
 const methodOverride=require('method-override');
@@ -26,11 +26,11 @@ async function main()
 main()
 .then((res) =>
 {
-    console.log("Connection established with database Windbnb");
+    console.log("Connection established with database WayStay");
 })
 .catch((err) =>
 {
-    console.log("Failed to establish connection with database WindBnb");
+    console.log("Failed to establish connection with database WayStay");
 });
 
 function validateListing(req, res, next)
