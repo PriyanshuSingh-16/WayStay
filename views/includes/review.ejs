@@ -1,0 +1,51 @@
+<div class="reviews-container">
+  <section class="leave-review">
+    <h2>✨ Share Your Experience!</h2>
+    <form action="/listing/<%= data._id %>/review" method="POST" class="needs-validation" novalidate>
+      <div class="form-group">
+        <label for="message">📝 Your Review:</label>
+        <textarea name="Review[message]" id="message" placeholder="Tell us what you loved!" required></textarea>
+        <div class="invalid-feedback">
+          *required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="rating">⭐ Rating:</label>
+        <select name="Review[rating]" id="rating" required>
+          <option value="" disabled selected>Select a rating</option>
+          <option value="1">1 ⭐</option>
+          <option value="2">2 ⭐⭐</option>
+          <option value="3">3 ⭐⭐⭐</option>
+          <option value="4">4 ⭐⭐⭐⭐</option>
+          <option value="5">5 ⭐⭐⭐⭐⭐</option>
+        </select>
+        <div class="invalid-feedback">
+          *required
+        </div>
+      </div>
+
+      <button type="submit" class="btn-primary">✨ Post Review</button>
+    </form>
+  </section>
+
+  <section class="all-reviews">
+    <h2>💬 Guest Reviews</h2>
+    <% if (data.reviews.length === 0) { %>
+      <p class="no-review">No reviews yet — be the first adventurer!</p>
+    <% } else { %>
+      <% data.reviews.forEach(review => { %>
+        <div class="review-card">
+          <div class="review-header">
+            <span class="rating-badge"><%= review.rating %> ⭐</span>
+            <form method="POST" action="/listing/<%= data._id %>/review/<%= review._id %>?_method=DELETE">
+              <button type="submit" class="btn-delete">❌</button>
+            </form>
+          </div>
+          <p class="review-message">“<%= review.message %>”</p>
+        </div>
+      <% }) %>
+    <% } %>
+  </section>
+</div>
+<script src="/js/form.js"></script>

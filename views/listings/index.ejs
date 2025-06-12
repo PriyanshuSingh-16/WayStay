@@ -1,0 +1,33 @@
+<% layout('/layouts/boilerplate') %>
+<% block('styles') 
+{%>
+    <link rel="stylesheet" href="/css/index.css">
+<%}%>
+
+<main class="list">
+    <% for(let i of data) 
+    {%>
+        <div
+          class="card"
+          role="button"
+          tabindex="0"
+          data-href="/listings/<%= i._id %>/show"
+        >
+            <img class="place-image" src="<%= i.image.url %>" alt="<%= i.image.filename %>" />
+            <div class="card-content">
+                <h2 class="title"><%= i.title %></h2>
+                <div class="card-buttons">
+                    <a href="/listings/<%= i._id %>/edit" class="btn edit-btn">Edit</a>
+                    <form
+                        action="/listings/<%= i._id %>/delete?_method=DELETE"
+                        method="POST"
+                        class="delete-form"
+                    >
+                        <button type="submit" class="btn delete-btn">Delete</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    <%}%>
+</main>
+<script src="/js/home.js"></script>

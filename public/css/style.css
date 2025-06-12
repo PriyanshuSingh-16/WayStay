@@ -1,0 +1,262 @@
+/* Header */
+body{
+  font-family: 'Trebuchet MS';
+}
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #264653;
+  color: white;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Prevent content hiding behind the fixed header */
+.content-wrapper {
+  padding-top: 90px; /* adjust based on your header height */
+}
+
+/* Add button styling */
+.add-btn {
+  background-color: #ff3b3b;
+  color: #ffffff;
+  padding: 0.6rem 1rem;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.add-btn:hover {
+  background-color: #e63946;
+}
+
+.footer-container{
+  background-color:#264653;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-icons{
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  padding-left: 40px;
+  align-items: center;
+}
+
+i{
+  margin: 5px;
+  radius: 2px;
+  font-size: 30px;
+}
+
+.footer-data{
+  display: flex;
+  font-size: 18px;
+  margin: 30px 30px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.reviews-container {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 20px;
+}
+
+.leave-review, .all-reviews {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  margin-bottom: 30px;
+}
+
+.leave-review h2, .all-reviews h2 {
+  margin-bottom: 20px;
+  color: #333;
+  font-weight: 600;
+  font-size: 26px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  font-weight: 500;
+  display: block;
+  margin-bottom: 8px;
+  color: #555;
+}
+
+textarea, select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 16px;
+  resize: vertical;
+}
+
+textarea {
+  min-height: 100px;
+}
+
+.btn-primary {
+  padding: 12px 25px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+/* Review.ejs */
+.reviews-container {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 20px;
+}
+
+.leave-review, .all-reviews {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+  margin-bottom: 40px;
+}
+
+.leave-review h2, .all-reviews h2 {
+  margin-bottom: 20px;
+  font-size: 28px;
+  color: #333;
+  font-weight: 700;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  font-weight: 600;
+  margin-bottom: 8px;
+  display: block;
+  color: #555;
+}
+
+textarea, select {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 16px;
+  resize: vertical;
+  transition: all 0.3s ease;
+}
+
+textarea:focus, select:focus {
+  border-color: #00b894;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 184, 148, 0.15);
+}
+
+textarea {
+  min-height: 120px;
+}
+
+.btn-primary {
+  padding: 14px 28px;
+  background-color: #e63946;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #d62839;
+}
+
+.review-card {
+  padding: 20px;
+  border: 1px solid #eee;
+  border-radius: 15px;
+  background-color: #fefefe;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.review-card:hover {
+  box-shadow: 0 8px 16px rgba(0,0,0,0.06);
+  transform: translateY(-3px);
+}
+
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rating-badge {
+  background-color: #ffeaa7;
+  color: #2d3436;
+  padding: 6px 12px;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.review-message {
+  font-size: 17px;
+  color: #333;
+  margin-top: 10px;
+  line-height: 1.6;
+}
+
+.btn-delete {
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
+  color: #d63031;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.btn-delete:hover {
+  color: #e17055;
+}
+
+.no-review {
+  font-style: italic;
+  color: #777;
+  font-size: 16px;
+}
+
+@media (max-width: 600px) {
+  .reviews-container {
+    padding: 10px;
+  }
+
+  .leave-review, .all-reviews {
+    padding: 20px;
+  }
+}
